@@ -38,7 +38,7 @@ export const createCard = async (req, res) => {
   }
 };
 
-//Update project card
+//Update Project Card
 export const updateCard = async (req, res) => {
   const { id } = req.params;
   const { title, date, description } = req.body;
