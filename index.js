@@ -1,5 +1,4 @@
 import express from "express";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
@@ -9,7 +8,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT;
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 app.use("/cards", cardsRoutes);
 
