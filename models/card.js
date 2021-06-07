@@ -18,6 +18,6 @@ const cardSchema = mongoose.Schema({
   },
 });
 
-const PostCard = mongoose.model("ProjectCards", cardSchema);
+const ProjectCard = mongoose.model("ProjectCards", cardSchema);
 
-export default PostCard;
+export default ProjectCard;
