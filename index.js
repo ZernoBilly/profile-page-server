@@ -11,11 +11,10 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/cards", cardsRoutes);
-
 app.get("/", (req, res) => res.send("Hello from homepage!"));
 
 app.use(cors());
+app.use("/cards", cardsRoutes);
 
 const PORT = process.env.PORT;
 
