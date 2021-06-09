@@ -16,6 +16,10 @@ const cardSchema = mongoose.Schema({
     type: String,
     require: true,
   },
+
+  selectedFile: {
+    type: String,
+  },
 });
 
 const ProjectCard = mongoose.model("ProjectCards", cardSchema);
