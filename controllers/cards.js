@@ -26,7 +26,7 @@ export const getCard = async (req, res) => {
 
 //Create Project Card
 export const createCard = async (req, res) => {
-  const { title, date, description } = req.body;
+  const { title, date, description, selectedFile } = req.body;
 
   const newCard = new ProjectCard({ title, date, description, selectedFile });
 
@@ -41,10 +41,10 @@ export const createCard = async (req, res) => {
 //Update Project Card
 export const updateCard = async (req, res) => {
   const { id } = req.params;
-  const { title, date, description } = req.body;
+  const { title, date, description, selectedFile } = req.body;
 
   if (!mongoose.Types.ObjectId.isValid(id))
-    return res.status(404).send(`No post with is ${id}`);
+    return res.status(404).send(`No post with id ${id}`);
 
   const updatedCard = { _id: id, title, date, description, selectedFile };
 
