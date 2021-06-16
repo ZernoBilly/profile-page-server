@@ -16,15 +16,13 @@ app.use(cors());
 app.use("/cards", cardsRoutes);
 
 const PORT = process.env.PORT;
+const DB_CONNECTION = process.env.DB_CONNECTION;
 
 //MongoDB database connection
-mongoose.connect(
-  process.env.DB_CONNECTION,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  () => console.log("Connected to Database!")
-);
-
 //Server listen port
-app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
-
-mongoose.set("useFindAndModify", false);
+mongoose
+  .connect(DB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>
+    app.listen(PORT, () => console.log(`Server Running on Port: ${PORT}`))
+  )
+  .catch((error) => console.log(`${error} Connection error`));
