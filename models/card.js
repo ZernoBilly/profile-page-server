@@ -20,6 +20,15 @@ const cardSchema = mongoose.Schema({
   selectedFile: {
     type: String,
   },
+
+  url: {
+    type: String,
+    require: true,
+  },
+
+  gitHub: {
+    type: String,
+  },
 });
 
 const ProjectCard = mongoose.model("ProjectCards", cardSchema);
